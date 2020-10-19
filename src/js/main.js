@@ -54,7 +54,7 @@ dropInputs.forEach(el => {
             }
         })
         dropHeader.textContent = `Выбранные вебинары:  `
-        dropValue.textContent = dropTitle.join(', ')
+        dropValue.textContent = cutOffTitle(dropTitle, 30)
         if (dropTitle.length < 1) {
             dropHeader.textContent = `Выберите вебинар :`
         } else if (dropTitle.length >= 5) {
@@ -71,6 +71,21 @@ dropAll.addEventListener('click', () => {
     dropHeader.textContent = `Выбраны все вебинары`
     dropValue.textContent = ''
 })
+
+function cutOffTitle(arr, length) {
+    let result = []
+    let str = arr.join(', ')
+    let arrStr = str.split('')
+    for (let i = 0; i < length; i++) {
+        result.push(arrStr[i])
+    }
+    if (arrStr.length < length) {
+        return result.join('')
+    } else {
+        return `${result.join('')}...`
+    }
+
+}
 
 //dropdown opening
 
@@ -114,3 +129,26 @@ notifyRadios.forEach(el => {
         el.parentNode.classList.add('notify__item--active')
     })
 })
+
+//popup 
+
+const popupBtn = document.querySelector('#popup__btn')
+const popup = document.querySelector('.popup')
+const popupLayout = document.querySelector('.popup__layout')
+
+popupBtn.addEventListener('click', () => {
+    window.showPopup()
+})
+
+popupLayout.addEventListener('click', () => {
+    window.hidePopup()
+})
+
+window.showPopup = () => {
+    popup.classList.toggle('popup--opened')
+    popup.classList.add('popup--clicked')
+}
+
+window.hidePopup = () => {
+    popup.classList.remove('popup--opened')
+}

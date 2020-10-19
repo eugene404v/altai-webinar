@@ -3,6 +3,8 @@ body {
     font-family: 'Akrobat';
     color: $main;
     font-size: 18px;
+    position: relative;
+    z-index: 1;
 }
 
 a {

@@ -176,18 +176,18 @@
         <form class="contacts__form form">
             <h3 class="form__title">Регистрация участника :</h3>
             <div class="form__container form__container--name">
-                <label for="name" class="form__label">Введите ваше Ф.И.О</label>
+                <label for="name" class="form__label">Введите ваше Ф.И.О*</label>
                 <input type="text" id="name" class="form__input form__input--name" data-req="true" required>
                 <span class="form__error">Введите ваше Ф.И.О</span>
             </div>
             <div class="form__pair">
                 <div class="form__container form__container--email">
-                    <label for="email" class="form__label">Введите ваш e-mail</label>
+                    <label for="email" class="form__label">Введите ваш e-mail*</label>
                     <input type="email" id="email" class="form__input form__input--email" data-req="true" required>
                     <span class="form__error">Введите ваш e-mail</span>
                 </div>
                 <div class="form__container form__container--tel">
-                    <label for="tel" class="form__label">Номер телефона</label>
+                    <label for="tel" class="form__label">Номер телефона*</label>
                     <input type="tel" id="tel" class="form__input form__input--tel" data-req="true" required>
                     <span class="form__error">Введите телефон</span>
                 </div>
@@ -259,7 +259,7 @@
             <div class="form__accept">
                 <input type="checkbox" name="accept" id="accept" class="form__personal_data" required>
                 <label for="accept" class="form__personal_label">
-                    Я даю согласие на обработку моих персональных данных, согласно политике конфиденциальности
+                    Я даю согласие на обработку моих персональных данных, согласно политике конфиденциальности*
                 </label>
                 <span class="form__error">Дайте согласие</span>
             </div>
@@ -281,7 +281,16 @@
         </nav>
         <a href="#" class="footer__policy">Политика конфиденциальности</a>
     </div>
-
 </footer>
+
+<button id="popup__btn">POPUP</button>
+
+<section class="popup">
+    <div class="popup__layout"></div>
+    <div class="popup__window">
+        <h2 class="popup__title">Вы успешно зарегистрировались !</h2>
+        <p class="popup__text">На указанный Вами e-mail будет прислано напоминание о трансляции вебинара</p>
+    </div>
+</section>
     <script src="script.js"></script>
 </body>
