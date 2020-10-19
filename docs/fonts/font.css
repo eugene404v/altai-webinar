@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Akrobat-Regular';
+  src: url('Akrobat-Regular.eot');
+  src: url('Akrobat-Regular.eot?#iefix') format('embedded-opentype'),
+       url('Akrobat-Regular.svg#Akrobat-Regular') format('svg'),
+       url('Akrobat-Regular.ttf') format('truetype'),
+       url('Akrobat-Regular.woff') format('woff'),
+       url('Akrobat-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
