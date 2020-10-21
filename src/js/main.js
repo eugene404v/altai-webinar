@@ -108,6 +108,13 @@ dropHeadline.addEventListener('click', () => {
     }
 })
 
+document.body.addEventListener('click', (e) => {
+    if (!e.target.closest('.drop')) {
+        dropHeadline.classList.remove('drop__title--opened')
+        dropMenu.classList.remove('drop__expand--opened')
+    }
+})
+
 //notify opening
 
 const notifyTitle = document.querySelector('.notify__title')
@@ -128,6 +135,13 @@ notifyRadios.forEach(el => {
         notifyItems.forEach(el => el.classList.remove('notify__item--active'))
         el.parentNode.classList.add('notify__item--active')
     })
+})
+
+document.body.addEventListener('click', (e) => {
+    if (e.target != notifyList && e.target != notifyTitle) {
+        notifyTitle.classList.remove('notify__title--opened')
+        notifyList.classList.remove('notify__list--opened')
+    }
 })
 
 //popup 
@@ -151,4 +165,20 @@ window.showPopup = () => {
 
 window.hidePopup = () => {
     popup.classList.remove('popup--opened')
+}
+
+// scroll to anchors
+
+const anchors = document.querySelectorAll('.scroll');
+
+for (let anchor of anchors) {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const blockID = anchor.getAttribute('href');
+
+        document.querySelector(blockID).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        })
+    })
 }

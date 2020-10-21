@@ -170,7 +170,9 @@
         padding-bottom: 39px;
         position: relative;
         &__menu {
-            display: none;
+            height: 0;
+            overflow: hidden;
+            transition: .3s;
             position: absolute;
             left: 0;
             right: 0;
@@ -179,16 +181,17 @@
             z-index: 2;
             background-color: #fff;
             width: 100vw;
-            height: calc(100vh - 52px);
             flex-direction: column;
             align-items: center;
-            padding-top: 70px;
+            padding: 0;
             background-image: url('./../img/menu-bg.svg');
             background-repeat: no-repeat;
             background-size: contain;
             background-position: bottom;
             &--opened {
-                display: flex;
+                transition: .3s;
+                height: calc(100vh - 52px);
+                padding-top: 70px;
             }
         }
         &__item {
@@ -199,12 +202,51 @@
         }
         &__hamburger {
             display: block;
+            padding-left: 0;
+            padding-right: 0;
             width: 32px;
-            height: 15px;
+            height: 3px;
             background-color: $green;
             border: none;
+            position: relative;
+            margin-top: 6px;
+            margin-bottom: 6px;
+            border-radius: 2px;
+            transition: .3s;
+            &:focus {
+                outline: transparent;
+            }
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                width: 32px;
+                height: 3px;
+                background-color: $green;
+                top: -6px;
+                border-radius: 2px;
+                transition: .3s;
+                transform-origin: left;
+            }
+            &:after {
+                top: auto;
+                bottom: -6px;
+            }
             &--opened {
-                background-color: red;
+                background-color: transparent;
+                transition: .3s;
+                &:before {
+                    transform: rotate(45deg);
+                    transform-origin: left;
+                    transition: .3s;
+                }
+                &:after {
+                    transform: rotate(-45deg);
+                    transform-origin: left;
+                    bottom: -16px;
+                    transition: .3s;
+                }
             }
         }
         &__subtitle {
