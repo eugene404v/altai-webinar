@@ -367,6 +367,11 @@
 }
 
 @media screen and (max-width:450px) {
+    .contacts {
+        &__list {
+            text-align: center;
+        }
+    }
     .form {
         width: 380px;
         padding-left: 16px;

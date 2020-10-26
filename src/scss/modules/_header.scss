@@ -8,6 +8,11 @@
     &__top {
         display: flex;
         margin-bottom: 57px;
+        //position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        right: 0;
     }
     &__logo {
         margin-right: 235px;
