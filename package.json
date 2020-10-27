@@ -18,7 +18,8 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-watch": "^5.0.1",
     "sass": "^1.25.0",
-    "scss": "^0.2.4"
+    "scss": "^0.2.4",
+    "swiper": "^6.3.4"
   },
   "browserslist": [
     "> 1%",

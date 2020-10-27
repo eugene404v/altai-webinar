@@ -1,6 +1,7 @@
 .speakers {
     padding-top: 30px;
     padding-bottom: 30px;
+    background: #F5F5F5;
     &__title {
         margin-bottom: 50px;
     }
@@ -8,7 +9,6 @@
 
 .speaker {
     background: #FFFFFF;
-    border: 2px solid #DDDDDD;
     border-radius: 5px;
     min-height: 409px;
     padding-top: 25px;
@@ -26,10 +26,22 @@
         margin-top: 10px;
         margin-bottom: 8px;
     }
+    &__subname {
+        text-align: center;
+        max-width: 380px;
+    }
     &__text {
         margin-top: 8px;
         max-width: 331px;
         text-align: center;
+    }
+    &--moderator {
+        border: 2px solid $green;
+    }
+    &__moder {
+        color: $green;
+        @include fsz(24px, 24px, 18px);
+        margin-bottom: 10px;
     }
 }
 

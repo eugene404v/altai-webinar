@@ -1,0 +1,106 @@
+.materials {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    &__wrapper {
+        max-width: 840px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &__title {
+        margin-bottom: 20px;
+    }
+    &__subtitle {
+        @include fsz(30px, 25px, 16px);
+        font-weight: 500;
+        margin-bottom: 20px;
+        position: relative;
+        padding-left: 42px;
+        &:before {
+            position: absolute;
+            content: '';
+            width: 32px;
+            height: 31px;
+            background-image: url('./../img/material1.svg');
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        & .colored {
+            font-weight: 700;
+        }
+    }
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__item {
+        flex-basis: 47%;
+    }
+    &__link {
+        padding-left: 57px;
+        font-weight: 700;
+        color: $main;
+        position: relative;
+        @include fsz(18px,
+        16px,
+        14px);
+        &:before {
+            position: absolute;
+            content: '';
+            width: 47px;
+            height: 47px;
+            border-radius: 50%;
+            box-shadow: -2px 7px 17px rgba(97, 171, 48, 0.09);
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: $light-green;
+        }
+        &--link {
+            &:before {
+                background-image: url('./../img/material2.svg');
+            }
+        }
+        &--pdf {
+            &:before {
+                background-image: url('./../img/material3.svg');
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .materials {
+        &__wrapper {
+            max-width: 700px;
+        }
+        &__item {
+            flex-basis: 49%;
+        }
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .materials {
+        &__wrapper {
+            max-width: 90%;
+        }
+        &__list {
+            flex-direction: column;
+            align-items: center;
+        }
+        &__subtitle {
+            padding-left: 57px;
+            &:before {
+                left: 5px;
+            }
+        }
+        &__item {
+            flex-basis: 100%;
+            margin-bottom: 20px;
+        }
+    }
+}

@@ -1,25 +1,57 @@
 .footer {
     padding-top: 25px;
-    padding-bottom: 55px;
+    padding-bottom: 25px;
     &__wrapper {
         display: flex;
     }
+    &__left {
+        margin-right: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
     &__logo {
-        background-image: url('./../img/footer-logo.svg');
-        width: 131px;
+        background-image: url('./../img/logo.svg');
+        width: 145px;
         height: 37px;
         flex-shrink: 0;
-        margin-right: 200px;
+    }
+    &__others {
+        display: flex;
+        align-self: flex-start;
+        margin-right: auto;
+    }
+    &__other {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+    }
+    &__img {
+        flex-shrink: 0;
+        margin-right: 5px;
+    }
+    &__other-text {
+        width: 75px;
+        font-size: 12px;
+        line-height: 1;
     }
     &__nav {
         display: flex;
-        margin-right: 150px;
+        margin-left: auto;
+        margin-right: auto;
     }
     &__link {
         margin-right: 48px;
+        @include fsz(18px,
+        16px,
+        14px);
         &:last-child {
             margin-right: 0;
         }
+    }
+    &__policy {
+        font-size: 12px;
     }
 }
 
@@ -34,15 +66,23 @@
         }
         &__nav {
             margin-right: 0;
-            margin-left: 110px;
+        }
+        &__other {
+            margin-bottom: 10px;
+        }
+        &__link {
+            margin-right: 20px;
+        }
+        &__left {
+            margin-right: 10px;
         }
     }
 }
 
-@media screen and (max-width:1000px) {
+@media screen and (max-width:991px) {
     .footer {
-        &__nav {
-            margin-left: -40px;
+        &__others {
+            flex-direction: column;
         }
     }
 }
@@ -53,21 +93,35 @@
             justify-content: space-between;
             position: relative;
         }
-        &__logo {
-            margin-right: 0;
-        }
         &__nav {
             margin-left: 0;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-end;
         }
         &__link {
             margin-right: 0;
+            font-weight: 700;
+            margin-bottom: 10px;
         }
-        &__policy {
+        &__others {
+            flex-direction: column;
+        }
+    }
+}
+
+@media screen and (max-width:400px) {
+    .footer {
+        &__left {
+            order: 1;
+        }
+        &__others {
             position: absolute;
             left: 0;
-            top: 40px;
+            bottom: 0;
+            order: 3;
+        }
+        &__nav {
+            order: 2;
         }
     }
 }

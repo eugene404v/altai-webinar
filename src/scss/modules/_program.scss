@@ -1,4 +1,5 @@
 .program {
+    padding-bottom: 30px;
     &__title {
         margin-top: 50px;
         margin-bottom: 20px;
@@ -12,45 +13,42 @@
     padding-top: 17px;
     padding-bottom: 20px;
     display: flex;
-    &:before {
-        content: '';
-        position: absolute;
-        display: block;
-        right: -45px;
-        top: -26px;
-        //background-color: rgba(255, 255, 255, 0.22);
-        height: 152px;
-        //background-image: url('./../img/card-bg.png');
-        background-size: 200px;
-        background-position: -87px 26px;
-        width: 152px;
-        border-radius: 50%;
-    }
+    background-image: url('./../img/program-bg-gray.svg');
+    background-repeat: no-repeat;
+    background-position: left bottom;
     &__time {
         position: relative;
         z-index: 2;
         text-align: center;
         font-size: 25px;
         width: 200px;
-        border-right: 1px solid $blue;
+        border-right: 1px solid $green;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         &--altai {
-            @include fsz(30px, 30px, 18px);
+            @include fsz(30px,
+            30px,
+            18px);
         }
         &--msk {
-            @include fsz(18px, 18px, 12px);
+            @include fsz(18px,
+            18px,
+            12px);
         }
     }
     &__title {
+        display: flex;
+        align-items: center;
         width: 420px;
         position: relative;
         z-index: 2;
         font-size: 18px;
         font-weight: 700;
-        @include fsz(20px, 20px, 12px);
+        @include fsz(20px,
+        20px,
+        12px);
         padding-left: 18px;
         padding-right: 10px;
         &--small {
@@ -61,13 +59,18 @@
         display: flex;
         flex-direction: column;
         width: 340px;
+        @include fsz(16px,
+        16px,
+        12px);
     }
     &__item {
         position: relative;
         z-index: 2;
         margin-bottom: 15px;
         padding-left: 20px;
-        @include fsz(16px, 16px, 12px);
+        @include fsz(16px,
+        16px,
+        12px);
         &:last-child {
             margin-bottom: 0;
         }
@@ -89,17 +92,25 @@
     &__btn {
         margin: auto;
         border: none;
-        background-color: $blue;
+        background-color: $green;
         color: white;
         font-weight: 700;
         width: 155px;
+        &--all {
+            width: 220px;
+        }
     }
     &:nth-child(2n+2) {
         color: #fff;
-        background: #3AAACD;
+        background-color: $green;
         & .card__btn {
             background-color: white;
-            color: $blue;
+            color: $green;
+            &:hover {
+                box-shadow: -2px 7px 22px rgba(11, 88, 68, 0.24);
+                color: white;
+                background: #0C6D54;
+            }
         }
         & .card__item {
             &:before {
@@ -123,18 +134,17 @@
         }
         &__title {
             order: 2;
-            width: 410px;
+            width: calc(100% - 150px);
             flex-shrink: 0;
         }
         &__btn {
-            order: 3;
+            order: 4;
         }
         &__list {
-            order: 4;
+            order: 3;
             flex-direction: row;
-            width: 100%;
+            width: calc(100% - 170px);
             margin-top: 20px;
-            padding-left: 17px;
         }
         &__item {
             flex-basis: 33%;
@@ -145,6 +155,7 @@
 
 @media screen and (max-width: 760px) {
     .program {
+        padding-bottom: 17px;
         &__title {
             margin-bottom: 10px;
         }
@@ -160,6 +171,8 @@
             margin-top: 10px;
             order: 3;
             flex-direction: column;
+            width: 100%;
+            text-align: center;
         }
         &__item {
             flex-basis: 100%;

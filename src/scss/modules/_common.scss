@@ -14,7 +14,7 @@ a {
     color: $green;
     &:hover {
         text-decoration: none;
-        color: red;
+        color: $green;
         font-weight: 700;
     }
 }
