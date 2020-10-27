@@ -24,14 +24,19 @@
     &__others {
         display: flex;
         margin-right: auto;
+        &--mobile {
+            display: none;
+        }
     }
     &__other {
         display: flex;
         align-items: center;
         margin-right: 20px;
+        &:last-child {
+            margin-right: 0;
+        }
     }
     &__img {
-        max-width: 30px;
         margin-right: 5px;
         flex-shrink: 0;
     }
@@ -174,6 +179,7 @@
             margin-right: auto;
         }
         &__item {
+            margin-right: 15px;
             &:last-child {
                 margin-right: 0;
             }
@@ -192,6 +198,20 @@
         &__top {
             justify-content: space-between;
         }
+        &__others {
+            display: none;
+            &--mobile {
+                display: flex;
+                max-width: 178px;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                margin-right: 0;
+            }
+        }
+        &__other {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
         &__nav {
             margin-right: 0;
         }
@@ -203,8 +223,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            top: 42px;
-            z-index: 2;
+            top: 52px;
             background-color: #fff;
             width: 100vw;
             flex-direction: column;
@@ -213,11 +232,12 @@
             background-image: url('./../img/menu-bg.svg');
             background-repeat: no-repeat;
             background-size: contain;
-            background-position: bottom;
+            background-position: center bottom -101px;
             &--opened {
                 transition: .3s;
-                height: calc(100vh - 42px);
+                height: calc(100vh - 52px);
                 padding-top: 70px;
+                z-index: 11;
             }
         }
         &__hamburger {
@@ -289,12 +309,6 @@
             padding-bottom: 40px;
             margin-bottom: 0;
         }
-        &__others {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
         &__subtitle {
             display: flex;
             flex-direction: column;
@@ -304,6 +318,9 @@
             flex-direction: column;
             align-items: center;
             margin-bottom: 10px;
+        }
+        &__menu {
+            background-position: center bottom;
         }
         &__info {
             display: flex;
