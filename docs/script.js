@@ -16046,9 +16046,6 @@ var Notify = /*#__PURE__*/function () {
 var popupBtn = document.querySelector('#popup__btn');
 var popup = document.querySelector('.popup');
 var popupLayout = document.querySelector('.popup__layout');
-popupBtn.addEventListener('click', function () {
-  window.showPopup();
-});
 popupLayout.addEventListener('click', function () {
   window.hidePopup();
 });
