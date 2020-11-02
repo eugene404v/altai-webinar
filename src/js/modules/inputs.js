@@ -20,7 +20,7 @@ export class Inputs {
                     el.classList.add('form__input--error')
                     el.nextElementSibling.classList.add('form__error--visible')
 
-                } else if (el.value && el.nextElementSibling.classList.contains('form__error')) {
+                } else if (el.value && el.nextElementSibling && el.nextElementSibling.classList.contains('form__error')) {
                     el.nextElementSibling.classList.remove('form__error--visible')
                     el.classList.remove('form__input--error')
                 }

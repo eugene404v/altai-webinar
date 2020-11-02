@@ -346,8 +346,12 @@
     }
 }
 
-@media screen and (max-width: 160px) {
+@media screen and (max-width: 360px) {
     .header {
-        background-position: bottom 110px right 41px;
+        &__menu {
+            &--opened {
+                padding-top: 20px;
+            }
+        }
     }
 }

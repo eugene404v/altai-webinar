@@ -120,7 +120,7 @@ export class Checks {
         this.dropTitle = []
         this.$dropInputs.forEach(elem => {
             if (elem.checked) {
-                this.dropTitle.push(elem.value)
+                this.dropTitle.push(elem.dataset.value)
             }
         })
         this.$dropHeader.textContent = `Выбранные вебинары:  `

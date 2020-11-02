@@ -16050,9 +16050,11 @@ popupLayout.addEventListener('click', function () {
   window.hidePopup();
 });
 
-window.showPopup = function () {
+window.showPopup = function (title,content) {
   popup.classList.toggle('popup--opened');
   popup.classList.add('popup--clicked');
+  popup.querySelector('.popup__title').textContent = title;
+  popup.querySelector('.popup__text').textContent = content;
 };
 
 window.hidePopup = function () {

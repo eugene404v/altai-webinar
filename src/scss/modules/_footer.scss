@@ -52,6 +52,11 @@
     }
     &__policy {
         font-size: 12px;
+        align-self: flex-end;
+    }
+    &__right {
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -130,7 +135,7 @@
             bottom: 0;
             order: 3;
         }
-        &__nav {
+        &__right {
             order: 2;
         }
     }
